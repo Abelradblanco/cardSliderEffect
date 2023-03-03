@@ -6,28 +6,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Card Swipe</title>
     <link rel="stylesheet" href="style.css" >
+    <script src="https://kit.fontawesome.com/e1c3955a06.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-<div class="card-set" >
+<div class="card-swiper">
+    <div class="card-sets">
 
-        <div class="little-card card">
-        </div>
-        <div class="big-card card">
-        </div>
-        <div class="little-card card">
-        </div>
-        <div class="big-card card">
-        </div>
-        <div class="little-card card">
-        </div>
-        <div class="big-card card">
-        </div>
-        <div class="little-card card">
-        </div>
-        <div class="big-card card">
+        <div class="card-set" data-index="0" data-status="active">
+                <div class="little-card card">
+                </div>
+                <div class="big-card card">
+                </div>
+                <div class="little-card card">
+                </div>
+                <div class="big-card card">
+                </div>
+                <div class="little-card card">
+                </div>
+                <div class="big-card card">
+                </div>
+                <div class="little-card card">
+                </div>
+                <div class="big-card card">
 
-    </div> <!--Card Set end-->
-    
+        </div> <!--Card Set end-->
+
+        <div class="card-set" data-index="1" data-status="unknown">
+
+            <div class="little-card card">
+            </div>
+            <div class="big-card card">
+            </div>
+            <div class="little-card card">
+            </div>
+            <div class="big-card card">
+            </div>
+            <div class="little-card card">
+            </div>
+            <div class="big-card card">
+            </div>
+            <div class="little-card card">
+            </div>
+            <div class="big-card card">
+
+        </div> <!--Card Set end-->
+
+        <div class="card-set" data-index="3" data-status="unknown">
+
+            <div class="little-card card">
+            </div>
+            <div class="big-card card">
+            </div>
+            <div class="little-card card">
+            </div>
+            <div class="big-card card">
+            </div>
+            <div class="little-card card">
+            </div>
+            <div class="big-card card">
+            </div>
+            <div class="little-card card">
+            </div>
+            <div class="big-card card">
+        </div> <!--Card Set end-->
+
+    </div> <!--end card-sets-->
+
+    <div class="card-swiper-buttons">
+        <button id="dislike" onclick="handleDislikeClick()">
+            <i class="fa-solid fa-x"></i>
+        </button>
+        <button id="like" onclick="handleLikeClick()">
+            <i class="fa-solid fa-heart" ></i>
+        </button>
+    </div>
+ </div>       
 </body>
 </html>
