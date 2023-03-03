@@ -64,6 +64,30 @@ body{
     background-size: cover;
     background-position: center;
 }
+.little-card:nth-child(1){
+    background: url(images/smallcard\ \(1\).png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.little-card:nth-child(3){
+    background: url(images/smallcard\ \(2\).png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.little-card:nth-child(5){
+    background: url(images/smallcard\ \(3\).png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.little-card:nth-child(7){
+    background: url(images/smallcard\ \(4\).png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
 
 .card-set:hover > .big-card:nth-child(2){
     transform: translate(-75%, 15%) rotate(-20deg);
