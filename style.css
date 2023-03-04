@@ -6,24 +6,59 @@ body{
     place-items: center;
 }
 
-.card-sets,
-.card-set, .card{
+.card-groups,
+.card-group, .card{
     aspect-ratio: 5/7;
 }
 
-.card-sets,
-.card-set, .big-card{
+.card-groups,
+.card-group, .big-card{
     width: 30vmin;
 }
 
-.card-set{
+.card-group{
     position: absolute;
+    transition: transform 400ms ease;
 }
 
 .card{
     background-color: rgba(255, 255, 2555, 0.5) ;
     position: absolute;
     transition: transform 800ms cubic-bezier(.05,.43,.25,.95);
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: 0.3vmin solid rgb(58, 58, 58);
+
+}
+
+/*data status*/
+.card-group[data-status="unknown"]{
+    transform: scale(0);
+    transition: none;
+}
+
+.card-group[data-status="active"]{
+    transition-delay:  300ms;
+}
+
+.card-group[data-status="after"]{
+    transform: translateX(50%) scale(0);
+}
+
+.card-group[data-status="before"]{
+    transform: translateX(-50%) scale(0);
+}
+
+.card-group[data-status="becoming-active-from-after"]{
+    transform: translateX(50%) scale(0);
+    transition: none;
+}
+
+.card-group[data-status="becoming-active-from-before"]{
+    transform: translateX(-50%) scale(0);
+    transition: none;
 }
 
 .big-card{
@@ -37,6 +72,8 @@ body{
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    box-shadow: -1vmin 1vmin 2vmin rgba(0, 0, 0, 0.25);
+    pointer-events: none;
 }
 
 .big-card:nth-child(2){
@@ -45,6 +82,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+ 
 }
 
 .big-card:nth-child(4){
@@ -53,6 +91,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    
 }
 
 .big-card:nth-child(6){
@@ -69,7 +108,36 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-}
+  }
+
+.card-group[data-index="1"] > .big-card:nth-child(6) {
+    background: url(images/card4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  
+.card-group[data-index="1"] > .big-card:nth-child(8) {
+    background: url(images/card3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+ }
+  
+.card-group[data-index="2"] > .big-card:nth-child(4) {
+    background: url(images/card4.jpg); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  
+.card-group[data-index="2"] > .big-card:nth-child(8) {
+    background: url(images/card2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
 .little-card:nth-child(1){
     background: url(images/smallcard\ \(1\).png);
     background-repeat: no-repeat;
@@ -81,13 +149,15 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-}
+ }
+
 .little-card:nth-child(5){
     background: url(images/smallcard\ \(3\).png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
+
 .little-card:nth-child(7){
     background: url(images/smallcard\ \(4\).png);
     background-repeat: no-repeat;
@@ -95,47 +165,53 @@ body{
     background-position: center;
 }
 
-.card-set:hover > .big-card:nth-child(2){
-    transform: translate(-75%, 15%) rotate(-20deg);
+.card-group:hover > .card{
+    box-shadow: -2vmin 2vmin 3vmin rgba(0, 0, 0, 0.4);
+}
+
+.card-group:hover > .big-card:nth-child(2){
+    transform: translate(-75%, 16%) rotate(-24deg);
 
 }
 
-.card-set:hover > .big-card:nth-child(4){
-    transform: translate(-25%, 5%) rotate(-7.5deg);
+.card-group:hover > .big-card:nth-child(4){
+    transform: translate(-25%, 8%) rotate(-8deg);
 }
 
-.card-set:hover > .big-card:nth-child(6){
-    transform: translate(25%, 5%) rotate(7.5deg);
+.card-group:hover > .big-card:nth-child(6){
+    transform: translate(25%, 8%) rotate(8deg);
 }
 
-.card-set:hover > .big-card:nth-child(8){
-    transform: translate(75%, 15%) rotate(20deg);
+.card-group:hover > .big-card:nth-child(8){
+    transform: translate(75%, 16%) rotate(24deg);
 }
-.card-set:hover > .little-card:nth-child(1){
+.card-group:hover > .little-card:nth-child(1){
     transform: translate(200%, -160%) rotate(-15deg);
 }
 
-.card-set:hover > .little-card:nth-child(3){
+.card-group:hover > .little-card:nth-child(3){
     transform: translate(200%, 170%) rotate(15deg);
 }
 
-.card-set:hover > .little-card:nth-child(5){
+.card-group:hover > .little-card:nth-child(5){
     transform: translate(-200%, -170%) rotate(15deg);
 }
 
-.card-set:hover > .little-card:nth-child(7){
-    transform: translate(-270%, 170%) rotate(-15deg);
+.card-group:hover > .little-card:nth-child(7){
+    transform: translate(-280%, 140%) rotate(-15deg);
 }
+
+
 
 /*styling for buttons*/
-.card-swiper-buttons{
-    margin-top: 50vmin;
+.card-swiper-buttons {
+    margin-top: 7vmin;
     display: flex;
-    justify-content: space-around;
-    padding: 0vmin 3.5vmin;
-}
-
-.card-swiper-buttons > button{
+    justify-content: space-around;  
+    padding: 0vmin 4vmin;
+  }
+  
+  .card-swiper-buttons > button {
     font-size: 2.5vmin;
     border: 0.4vmin solid rgb(200, 200, 200);
     border-radius: 100%;
@@ -143,20 +219,30 @@ body{
     background-color: transparent;
     height: 7vmin;
     width: 7vmin;
+    display: grid;
+    place-items: center;
     cursor: pointer;
-}
+  }
 
 #like{
-    color: rgb(222, 17, 64);
-    border-color: rgb(222, 17, 64);
+    color:  rgb(222, 17, 64);
+    border-color:  rgb(58, 58, 58);
 }
 
 #dislike{
     color: rgb(222, 17, 64);
-    border-color: rgb(222, 17, 64);   
+    border-color: rgb(58, 58, 58);   
 }
+
+#like:hover{
+    color:  rgb(222, 17, 64);
+    border-color:  rgb(222, 17, 64);
+}
+
+#dislike:hover{
+    color: rgb(222, 17, 64);
+    border-color:  rgb(222, 17, 64);  
+}
+
+
  
-/*data status*/
-.card-set[data-status="unknown"]{
-    transform: scale(0);
-}
